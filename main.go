@@ -50,7 +50,7 @@ func main() {
 	initTemplates()
 
 	// Подключение к БД
-	connStr := "user=postgres dbname=demo host=192.168.0.8 port=5432 sslmode=disable" //"postgres://postgres:@192.168.0.8:5432/demo"
+	connStr := "user=postgres dbname=demo host=********* port=5432 sslmode=disable" //"postgres://postgres:@*********:5432/demo"
 	pool, err := pgxpool.New(context.Background(), connStr)
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
@@ -158,7 +158,7 @@ func calculateHandler(w http.ResponseWriter, r *http.Request) {
 		aircrafts = append(aircrafts, a)
 	}
 
-	// Используем WaitGroup для ожидания завершения горутин
+	// WaitGroup для ожидания завершения горутин
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 	var results []Result
