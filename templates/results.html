@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <table border="1">
+        <tr>
+            <th>Aircraft</th>
+            <th>Square</th>
+            <th>Time Taken</th>
+        </tr>
+        {{range .Results}}
+        <tr>
+            <td>{{.AircraftCode}}</td>
+            <td>{{.Square}}</td>
+            <td>{{.TimeTaken}}</td>
+        </tr>
+        {{end}}
+    </table>
+    <p><a href="/aircrafts"> Back to Calculation</a></p>
+</body>
+</html>

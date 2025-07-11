@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Airports</title>
+</head>
+<body>
+    <h1>Airports List</h1>
+    <ul>
+        {{range .}}
+        <li>
+            <a href="/flights?airport={{.Code}}">{{.Name}} ({{.Code}})</a>
+        </li>
+        {{end}}
+    </ul>
+    <p><a href="/aircrafts">Calculate Aircraft Seats</a></p>
+</body>
+</html>

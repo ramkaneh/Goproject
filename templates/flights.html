@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flights from {{.AirportCode}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 5px; background: #f0f0f0; margin-bottom: 5px; }
+        a { color: #06c; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Flights from {{.AirportCode}}</h1>
+    
+    {{if .Flights}}
+        <ul>
+            {{range .Flights}}
+            <li>Flight <strong>{{.Number}}</strong> (ID: {{.ID}})</li>
+            {{end}}
+        </ul>
+    {{else}}
+        <p>No flights found for this airport.</p>
+    {{end}}
+    
+    <p><a href="/airports">← Back to Airports</a></p>
+    
+    <!-- Диагностическая информация -->
+    <div style="margin-top: 20px; padding: 10px; background: #f8f8f8; border: 1px solid #ddd;">
+        <h3>Debug Info</h3>
+        <p>Airport Code: {{.AirportCode}}</p>
+        <p>Flights Count: {{len .Flights}}</p>
+    </div>
+</body>
+</html>
